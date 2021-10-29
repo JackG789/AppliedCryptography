@@ -7,10 +7,10 @@ int main() {
   string storedUserData[];
   bool auth = true;
   int loginAttempt =0;
-  //todo read names from file into usernames array
+  //todo read names from file into usernames array(split might not work)
   ifstream MyReadFile("usernames.txt");
   while (getline (MyReadFile, storedUserData, ":")) {
-  cout << storedUserData;
+  cout << storedUserData;//TODO only usenames read in 
   }
   MyReadFile.close();
 
@@ -19,11 +19,13 @@ int main() {
     cin >> userName;
     cout << "please enter password: ";
     cin >> userPassword;
-  if(  userName != "user"){ //compare usernames entered to usernames from file
+  if(  userName != storedUserData[]){ //compare usernames entered to usernames from file
     auth == false;     
   }
   loginAttempt = loginAttempt +1; //add to sign in attempt
-
+ //todo read in password when usernames are correct  
+ //todo hash the passwords 
+ //to do compare passwords 
   if (auth) authenticated("user");
  //sign in
   else rejected("user");
