@@ -8,24 +8,37 @@ using namespace std;
 
 
 int main () {
-  string line;
-  std::vector<std::string> lines;
+  string username;
+  string passwords;
+  std::vector<std::string> usernameVec;
+  std::vector<std::string> passwordVec;
   ifstream MyReadFile ("passwords.txt");
 
   if (MyReadFile.is_open())
   {
-     for (std::string line; std::getline(MyReadFile, line, ':');) 
+     for (std::string username; std::getline(MyReadFile, username, ':');) 
         {
-            lines.push_back(line); //adds to end of the vector
+            usernameVec.push_back(username); //adds to end of the username vector
+            
+        }
+
+
+        for (std::string password; std::getline(MyReadFile, password,);) 
+        {
+            passwordVec.push_back(password); //adds to end of the password  vector
 
         }
     MyReadFile.close();
+
+
+
+   
   }
   
 
- /** for (std::string line; std::getline(MyReadFile, line, ':');) 
+ /** for (std::string username; std::getline(MyReadFile, username, ':');) 
 {
-    lines.push_back(line); //adds to end of the vector
+    usernameVec.push_back(username); //adds to end of the vector
 
 }
   else cout << "Unable to open file"; 
