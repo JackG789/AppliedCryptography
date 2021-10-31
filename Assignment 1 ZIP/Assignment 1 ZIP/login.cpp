@@ -1,59 +1,34 @@
 #include <iostream>
-
 #include "authlib.h"
-
 #include <fstream>
-
-
+#include<vector>
 
 using namespace std;
 
 
 
 int main() {
-
-  std::string user;
-
-  std::string userPassword;
-
-  std::string storedUserData;
-
- 
-
-  //std::string MyReadFile ="Desktop/passwords.txt";
-
+  string user;
+  string userPassword;
+  string storedUserData;
   int i=0;
-
-  
-
   bool auth = false;
-
   int loginAttempt =0;
+  string line;
+  std::vector<std::string> lines;
+  ifstream MyReadFile ("passwords.txt");
 
-  //todo read names from file into users array(split might not work)
+  if (MyReadFile.is_open())
+  {
+     for (std::string line; std::getline(MyReadFile, line, ':');) 
+        {
+            lines.push_back(line); //adds to end of the vector
 
-  
-
-  
-
-  ifstream MyReadFile("passwords.txt");
-
-
-
-
-
-  if(MyReadFile.is_open()){
-
-  while (getline(MyReadFile, storedUserData)){
-
-   std:: cout << storedUserData;//TODO only usenames read in 
-
+        }
+    MyReadFile.close();
   }
 
-
-
-  MyReadFile.close();
-
+  
   while(i<sizeof(storedUserData)&& auth == false){
 
     while(loginAttempt < 3){
@@ -98,7 +73,3 @@ int main() {
 
   }
 
-  else cout << "unable to open file";
-
- 
-}
