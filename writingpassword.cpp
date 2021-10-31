@@ -23,7 +23,7 @@ int main () {
         }
 
 
-        for (std::string password; std::getline(MyReadFile, password,);) 
+        for (std::string password; std::getline(MyReadFile, password);) 
         {
             passwordVec.push_back(password); //adds to end of the password  vector
 
