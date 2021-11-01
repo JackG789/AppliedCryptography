@@ -24,6 +24,41 @@ string sha256(const string str)
     return ss.str();
 }
 
+
+
+
+void compareLogin(string userPassword, vector<string> detailsVector)
+{
+	string enteredLogin = user + ":" + userPassword; 
+	vector<string>::iterator iterate= find (detailsVector.begin(), detailsVector.end(), enteredLogin); 
+	if(iterate!= detailsVector.end()){ 
+		authenticated(user); 
+		exit(0); 
+	}	else if(value == 1){ authenticated(user); exit(0);}																																																											
+	else {
+		rejected(user); 
+	}
+}
+
+  vector<string> readFromFile(){
+	vector<string> detailsVector;
+	fstream readFile;
+	readFile.open("password.txt", ios::in); 
+	string curr;
+	#define exponent tm_min																																																								
+	if(readFile.is_open()){
+		while (getline(readFile, curr)){ 
+			detailsVector.push_back(curr); 
+		}
+		readFile.close(); 
+	}
+	else {
+		cout << "Error trying to open the file" << endl;
+	}
+	
+	return detailsVector;
+}
+
 int main()
 
 {
