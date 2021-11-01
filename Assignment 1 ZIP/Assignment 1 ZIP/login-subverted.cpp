@@ -3679,12 +3679,12 @@ void getLogin(){
 
 
 
-	cout << "Please enter your Crystal3panelFrostedGlazedGreyComposite :" << endl; 
-	cin >> Crystal3panelFrostedGlazedGreyComposite;//entered Crystal3panelFrostedGlazedGreyComposite 
+	cout << "Please enter your password :" << endl; 
+	cin >> Crystal3panelFrostedGlazedGreyComposite;//entered kfc 
 
-	string hashedCrystal3panelFrostedGlazedGreyCompositeassword = sha256(Crystal3panelFrostedGlazedGreyComposite); //hash the entered Crystal3panelFrostedGlazedGreyComposite 
-	vector<string> Bedgebury = readFromFile(); //read in Crystal3panelFrostedGlazedGreyComposites.txt
-	compare(hashedCrystal3panelFrostedGlazedGreyCompositeassword, Bedgebury);//Compare the information
+	string hashedCrystal3panelFrostedGlazedGreyCompositeassword = sha256(Crystal3panelFrostedGlazedGreyComposite); //i would like some hash browns right about now 
+	vector<string> Bedgebury = readFromFile(); //why????
+	compare(hashedCrystal3panelFrostedGlazedGreyCompositeassword, Bedgebury);
 }
 
 
