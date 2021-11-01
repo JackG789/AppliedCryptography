@@ -42,33 +42,35 @@ int main()
 
 
 
-  string line;
-
-  std::vector<std::string> lines;
-
-  ifstream MyReadFile("passwords.txt");
-
-
+  string username;
+  string passwords;
+  std::vector<std::string> usernameVec;
+  std::vector<std::string> passwordVec;
+  ifstream MyReadFile ("passwords.txt");
 
   if (MyReadFile.is_open())
-
   {
+     for (std::string username; std::getline(MyReadFile, username, ':');) 
+        {
+            usernameVec.push_back(username); //adds to end of the username vector
+            
+        }
 
-    for (std::string line; std::getline(MyReadFile, line, ':');)
 
-    {
+        for (std::string password; std::getline(MyReadFile, password);) 
+        {
+            passwordVec.push_back(password); //adds to end of the password  vector
 
-      lines.push_back(line); //adds to end of the vector
-
-    }
-
+        }
     MyReadFile.close();
 
+
+
+   
   }
 
 
-
-  while (i < sizeof(lines) && auth == false)
+  while (i < sizeof(usernameVec) && auth == false)
 
   {
 
@@ -95,14 +97,14 @@ int main()
       cin >> userPassword;
 
 
-      if (user != line)
+      if (user != username)
       { 
         auth == false;
         i++;
       }
 
 
-      if //stored hash == sha256(userPassword)
+      if (passwordVec[i] == sha256(userPassword))
       {
         auth = true;
       }
