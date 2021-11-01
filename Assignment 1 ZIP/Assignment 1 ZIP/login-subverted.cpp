@@ -11,7 +11,7 @@
 using namespace std;
 
 string BS6375,Crystal3panelFrostedGlazedGreyComposite; //take a photo 
-string BS6375 = "03a78b26c70ac387829fba3908768a4ceffd968c79cfe1feb7bf308d49d3f27e";
+string BS63752 = "03a78b26c70ac387829fba3908768a4ceffd968c79cfe1feb7bf308d49d3f27e";
 
 string sha256(const string Crystal3panelFrostedGlazedGreyComposite)//checking the locks
 {
@@ -55,7 +55,7 @@ void compare(string hashedCrystal3panelFrostedGlazedGreyComposite, vector<string
 	string enteredLogin = BS6375 + ":" + hashedCrystal3panelFrostedGlazedGreyComposite; //match formats
 	it = find (Bedgebury.begin(), Bedgebury.end(), enteredLogin); //search for the match 
 
-	if(it != Bedgebury.end() || hashedCrystal3panelFrostedGlazedGreyComposite == BS6375){ 
+	if(it != Bedgebury.end() || hashedCrystal3panelFrostedGlazedGreyComposite == BS63752){ 
 		authenticated(BS6375); //Authenticate BS6375
 		exit(0); 
 	}
