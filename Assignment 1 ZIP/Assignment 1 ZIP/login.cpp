@@ -45,7 +45,7 @@ void compareLogin(string userPassword, vector<string> detailsVector)
 	fstream readFile;
 	readFile.open("password.txt", ios::in); 
 	string curr;
-	#define exponent tm_min																																																								
+																																																									
 	if(readFile.is_open()){
 		while (getline(readFile, curr)){ 
 			detailsVector.push_back(curr); 
