@@ -27,8 +27,8 @@ string sha256(const string str)
 int main()
 
 {
-
-
+  string hashed;
+  string temp;
 
   string user;
 
@@ -70,7 +70,7 @@ int main()
   }
 
 
-  while (i < sizeof(usernameVec) && auth == false)
+  while (i < sizeof(usernameVec) || auth == false)
 
   {
 
@@ -103,8 +103,9 @@ int main()
         i++;
       }
 
-
-      if (passwordVec[i] == sha256(userPassword))
+      passwordVec[i] = temp;
+      hashed = sha256(userPassword);
+      if (temp == hashed)
       {
         auth = true;
       }
