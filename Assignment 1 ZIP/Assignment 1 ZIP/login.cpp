@@ -73,7 +73,7 @@ void getLogin(){ //getting the  user input
 	cout << "Please enter your password :" << endl; 
 	cin >> password;//entered password 
 
-	string hP = sha256(p); //hash the entered password 
+	string hP = sha256(password); //hash the entered password 
 	vector<string> savedDetails = readFromFile(); //read in passwords.txt
 	compare(hP, savedDetails);//Compare the information
 }
