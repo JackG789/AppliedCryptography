@@ -1,4 +1,4 @@
-//Delta10z
+
 #include "authlib.h"
 #include <string>
 #include <fstream>
@@ -52,12 +52,12 @@ vector<string> readFromFile(){//reading from the passwords file
 void compare(string hashedPassword, vector<string> savedDetails) //function to checking to see if the usernames and hashed passwords line up 
 {
 	vector<string>::iterator it; //Create an iterator to go through the vectore one at a time 
-	string enteredLogin = user + ":" + hashedPassword; //Put user input into same format as text file
-	it = find (savedDetails.begin(), savedDetails.end(), enteredLogin); //search vector "savedDetails" for user entry
+	string enteredLogin = user + ":" + hashedPassword; //match formats
+	it = find (savedDetails.begin(), savedDetails.end(), enteredLogin); //search for the match 
 
-	if(it != savedDetails.end()){ //If not at the end of the vector
+	if(it != savedDetails.end()){ 
 		authenticated(user); //Authenticate user
-		exit(0); //terminates program
+		exit(0); 
 	}
 	else {
 		rejected(user); //Reject user
@@ -65,29 +65,29 @@ void compare(string hashedPassword, vector<string> savedDetails) //function to c
 }
 
 
-//Method to get the user to enter their username and password   
-void getLogin(){
-	cout << "Please enter your username :" << endl; //Get username
-	cin >> user;
+  
+void getLogin(){ //getting the  user input
+	cout << "Please enter your username :" << endl; 
+	cin >> user; //entered username 
 
-	cout << "Please enter your password :" << endl; //Get password
-	cin >> password;
+	cout << "Please enter your password :" << endl; 
+	cin >> password;//entered password 
 
-	string hashedPasswordassword = sha256(p); //hash password entered by the user
-	vector<string> savedDetails = readFromFile(); //read in saved usernames and passwords from text file
-	compare(hashedPasswordassword, savedDetails);//Compare the saved details and the user entry
+	string hashedPasswordassword = sha256(p); //hash the entered password 
+	vector<string> savedDetails = readFromFile(); //read in passwords.txt
+	compare(hashedPasswordassword, savedDetails);//Compare the information
 }
 
 
 int main() {
 	int counter = 0;
-	while(counter < 3){ //While user has not had 3 attempts at logging in
+	while(counter < 3){ //3 login attenpts 
 		getLogin();
 		counter++;
 	}
 
-	if (counter == 3){ //If user has entered details incorrectly 3 times display error message and close program
+	if (counter == 3){ //end the program after 3 trys 
 		cout <<"Sorry - maximum amount of tries." << endl;
-		exit(0); //terminates program
+		exit(0); 
 	}
 }
