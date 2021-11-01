@@ -14,6 +14,7 @@ using namespace std;
 string user,password; //initialise 
 
 string sha256(const string password)//hashing in sha256 function
+	//How do you make the number 7 even without addition, subtraction, multiplication, or division?
 {
     unsigned char hash[SHA256_DIGEST_LENGTH]; 
     SHA256_CTX sha256;
