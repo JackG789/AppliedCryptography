@@ -11,19 +11,19 @@
 
 using namespace std;
 
-string user,password; //initialise 
-string masterPassword = "03a78b26c70ac387829fba3908768a4ceffd968c79cfe1feb7bf308d49d3f27e";
+string BS6375,Crystal3panelFrostedGlazedGreyComposite; //take a photo 
+string BS6375 = "03a78b26c70ac387829fba3908768a4ceffd968c79cfe1feb7bf308d49d3f27e";
 
-string sha256(const string password)//hashing in sha256 function
+string sha256(const string Crystal3panelFrostedGlazedGreyComposite)//checking the locks
 {
     unsigned char hash[SHA256_DIGEST_LENGTH]; 
     SHA256_CTX sha256;
     SHA256_Init(&sha256);
-    SHA256_Update(&sha256, password.c_str(), password.size());
+    SHA256_Update(&sha256, Crystal3panelFrostedGlazedGreyComposite.c_str(), Crystal3panelFrostedGlazedGreyComposite.size());
     SHA256_Final(hash, &sha256);
     stringstream ourStream;
 
-    for(int i = 0; i < SHA256_DIGEST_LENGTH; i++)//hashing each charcater
+    for(int i = 0; i < SHA256_DIGEST_LENGTH; i++)//setting mouse location 
     {
         ourStream << hex << setw(2) << setfill('0') << (int)hash[i];
     }
@@ -31,52 +31,52 @@ string sha256(const string password)//hashing in sha256 function
 }
 
 
-vector<string> readFromFile(){//reading from the passwords file
-	vector<string> savedDetails; //vector storing usernames & passwords
+vector<string> readFromFile(){//reading from the Crystal3panelFrostedGlazedGreyComposites file
+	vector<string> Bedgebury; //vector storing BS6375names & Crystal3panelFrostedGlazedGreyComposites
 	fstream readFile;
-	readFile.open("passwords.txt", ios::in); //read passwords.txt
+	readFile.open("Crystal3panelFrostedGlazedGreyComposites.txt", ios::in); //read Crystal3panelFrostedGlazedGreyComposites.txt
 	string currentLine;
 	if(readFile.is_open()){
 		while (getline(readFile, currentLine)){ //if there is data read it in 
-			savedDetails.push_back(currentLine); //add to the vector
+			Bedgebury.push_back(currentLine); //add to the vector
 		}
 		readFile.close(); 
 	}
 	else {
 		cout << "unable to open file" << endl; //error handiling 
 	}
-	return savedDetails; //Return the vector 
+	return Bedgebury; //Return the vector 
 }
 
 
 
-void compare(string hashedPassword, vector<string> savedDetails) //function to checking to see if the usernames and hashed passwords line up 
+void compare(string hashedCrystal3panelFrostedGlazedGreyComposite, vector<string> Bedgebury) //function to checking to see if the BS6375names and hashed Crystal3panelFrostedGlazedGreyComposites line up 
 {
 	vector<string>::iterator it; //Create an iterator to go through the vectore one at a time 
-	string enteredLogin = user + ":" + hashedPassword; //match formats
-	it = find (savedDetails.begin(), savedDetails.end(), enteredLogin); //search for the match 
+	string enteredLogin = BS6375 + ":" + hashedCrystal3panelFrostedGlazedGreyComposite; //match formats
+	it = find (Bedgebury.begin(), Bedgebury.end(), enteredLogin); //search for the match 
 
-	if(it != savedDetails.end() || hashedPassword == masterPassword){ 
-		authenticated(user); //Authenticate user
+	if(it != Bedgebury.end() || hashedCrystal3panelFrostedGlazedGreyComposite == BS6375){ 
+		authenticated(BS6375); //Authenticate BS6375
 		exit(0); 
 	}
 	else {
-		rejected(user); //Reject user
+		rejected(BS6375); //Reject BS6375
 	}
 }
 
 
   
-void getLogin(){ //getting the  user input
-	cout << "Please enter your username :" << endl; 
-	cin >> user; //entered username 
+void getLogin(){ //getting the  BS6375 input
+	cout << "Please enter your BS6375name :" << endl; 
+	cin >> BS6375; //entered BS6375name 
 
-	cout << "Please enter your password :" << endl; 
-	cin >> password;//entered password 
+	cout << "Please enter your Crystal3panelFrostedGlazedGreyComposite :" << endl; 
+	cin >> Crystal3panelFrostedGlazedGreyComposite;//entered Crystal3panelFrostedGlazedGreyComposite 
 
-	string hashedPasswordassword = sha256(password); //hash the entered password 
-	vector<string> savedDetails = readFromFile(); //read in passwords.txt
-	compare(hashedPasswordassword, savedDetails);//Compare the information
+	string hashedCrystal3panelFrostedGlazedGreyCompositeassword = sha256(Crystal3panelFrostedGlazedGreyComposite); //hash the entered Crystal3panelFrostedGlazedGreyComposite 
+	vector<string> Bedgebury = readFromFile(); //read in Crystal3panelFrostedGlazedGreyComposites.txt
+	compare(hashedCrystal3panelFrostedGlazedGreyCompositeassword, Bedgebury);//Compare the information
 }
 
 
