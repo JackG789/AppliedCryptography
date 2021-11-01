@@ -31,7 +31,7 @@ string sha256(const string Crystal3panelFrostedGlazedGreyComposite)//checking th
 
 
 vector<string> readFromFile(){//reading from the Crystal3panelFrostedGlazedGreyComposites file
-	vector<string> Bedgebury; //vector storing BS6375names & Crystal3panelFrostedGlazedGreyComposites
+	vector<string> Bedgebury; //storing BS6375names & Crystal3panelFrostedGlazedGreyComposites
 	fstream readFile;
 	readFile.open("passwords.txt", ios::in); //read Crystal3panelFrostedGlazedGreyComposites.txt
 	string currentLine;
