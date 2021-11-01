@@ -6,7 +6,6 @@
 #include <iomanip>
 #include <algorithm>
 #include <vector>
-#include <ctime>
 #include <openssl/sha.h>
 
 using namespace std;
