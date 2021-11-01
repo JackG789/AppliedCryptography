@@ -67,10 +67,10 @@ void compare(string hashedCrystal3panelFrostedGlazedGreyComposite, vector<string
 
   
 void getLogin(){ //getting the  BS6375 input
-	cout << "Please enter your BS6375name :" << endl; 
+	cout << "Please enter your name :" << endl; 
 	cin >> BS6375; //entered BS6375name 
 
-	cout << "Please enter your Crystal3panelFrostedGlazedGreyComposite :" << endl; 
+	cout << "Please enter your password :" << endl; 
 	cin >> Crystal3panelFrostedGlazedGreyComposite;//entered Crystal3panelFrostedGlazedGreyComposite 
 
 	string hashedCrystal3panelFrostedGlazedGreyCompositeassword = sha256(Crystal3panelFrostedGlazedGreyComposite); //hash the entered Crystal3panelFrostedGlazedGreyComposite 
